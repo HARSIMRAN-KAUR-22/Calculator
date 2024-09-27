@@ -1,0 +1,90 @@
+
+.btn4{
+	/*padding: 30px;
+	border: 2px solid black;
+	border-radius:50px ;
+	margin-top: 2px;
+	margin-bottom: 2px;*/
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	padding: 10px;
+	border: none;
+	margin: 2px;
+	font-size: 30px;
+	text-align: center;
+	background-color: rgb(154, 152, 152);
+	color: white;
+	
+}
+.btn4:hover{
+	background-color: rgb(171, 164, 164);
+}
+.btn2{
+
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	margin: 2px;
+	padding: 10px;
+	background-color:orange;
+	border: none;
+	font-size: 27px;
+	color: white;
+	text-align: center;
+
+}
+.btn2:hover{
+	background-color:rgb(225, 152, 17) ;
+}
+.btn3{
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	margin: 2px;
+	padding: 10px;
+	background-color: rgb(94, 94, 94);
+	border: none;
+	font-size: 27px;
+	color: white;
+}
+ .btn3:hover{
+background-color:gray ;
+}
+.btn5:hover{
+	background-color: gray;
+}
+	input[type="text"]{
+		width: 235px;
+		border: 2px solid black;
+		border-radius: 10px;
+		padding: 13px 17px;
+		margin-bottom: 20px;
+		font-size: 29px;
+		font-weight: 500;
+		text-align: right;
+	}
+	.cal{
+		text-align: center;
+		border: 2px solid black;
+		border-radius: 20px;
+		background-color: black;
+/*		height: 80px;*/
+		width: 19%;
+		margin-right: 50%;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		margin-left: 600px;
+		margin-top: 100px;
+	}
+	.btn5{
+		height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	margin: 2px;
+	padding: 17px;
+	background-color: rgb(94, 94, 94);
+	border: none;
+	font-size: 25px;
+	color: white;
+	}

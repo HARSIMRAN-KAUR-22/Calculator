@@ -1,0 +1,211 @@
+
+.btn4{
+	
+     margin-top: 2px;
+     margin-bottom: 2px;
+       width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(154, 152, 152);
+    color: white;
+    padding: 2px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+}
+.btn4:hover{
+	background-color: rgb(171, 164, 164);
+}
+.btn2{
+
+    border: 2px solid black;
+
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color:orange;
+    color: white;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+.btn2:hover{
+	background-color:rgb(225, 152, 17) ;
+}
+.btn3{
+	
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(94, 94, 94);
+	border: none;
+    color: white;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 25px;
+    text-align: center;
+    border: 2px solid black;
+
+	
+	}
+    .btn3:hover{
+        background-color:gray ;
+        }
+        .btn5:hover{
+            background-color: gray;
+        }
+	input[type="text"]{
+		width: 300px;
+		border: 2px solid black;
+		border-radius: 10px;
+		padding: 13px 17px;
+		margin-bottom: 10px;
+		font-size: 29px;
+		font-weight: 500;
+		text-align: right;
+        margin-top: 2px;
+	}
+	.cal{
+		text-align: center;
+		border: 2px solid black;
+		border-radius: 20px;
+		background-color: black;
+/*		height: 80px;*/
+		width: 24%;
+		margin-right: 50%;
+		
+		padding-bottom: 4px;
+		margin-left: 550px;
+		
+	}
+	.btn5{
+        width: 80px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: rgb(94, 94, 94);
+        color: white;
+        padding: 2px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 20px;
+        border: 2px solid black;
+        
+	
+	}
+    .b1{
+        height: 30px;
+        width: 48px;
+        border-radius: 20px;
+        margin: 2px;
+        padding: 8px;
+        background-color: rgb(79, 78, 78);
+        border: none;
+        font-size: 13px;
+        text-align: center;
+        color: white;
+    }
+    .b2{
+       
+        height: 30px;
+    width: 48px;
+    border-radius: 20px;
+        margin: 2px;
+        padding: 8px;
+        background-color: rgb(79, 78, 78);
+        border: none;
+        font-size: 13px;
+    text-align: center;
+        color: white;
+    }
+  .mc{ 
+  
+        height: 30px;
+        width: 48px;
+        border-radius: 20px;
+        margin: 2px;
+        padding: 8px;
+        background-color: rgb(79, 78, 78);
+        border: none;
+        font-size: 13px;
+        text-align: center;
+        color: white;
+    
+}
+.m1 {
+ 
+    height: 30px;
+    width: 48px;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+    background-color: rgb(79, 78, 78);
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+}
+.m2{
+   
+    height: 30px;
+    width: 48px;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+    background-color: rgb(79, 78, 78);
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+}
+.mr{
+ 
+    height: 30px;
+    width: 48px;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+    background-color:rgb(79, 78, 78);
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+
+}
+.b1:hover,.b2:hover,.mc:hover,.m1:hover,.m2:hover,.mr:hover{
+    background-color: rgb(108, 104, 104);
+}
+.x1,.x2,.x3,.x4,.e,.x5,.x6,.r1,.r2,.r3,.r4,.log{
+   
+    height: 30px;
+    width: 48px;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+    background-color:rgb(79, 78, 78);
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+
+}
+.t0,.t1,.t2,.t3,.t4,.t5,.t6,.t7,.t8,.t9,.t10,.t11{
+    height: 30px;
+    width: 48px;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+    background-color: rgb(79, 78, 78);
+    border: none;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+
+}
+.t0:hover,.t1:hover,.t2:hover,.t3:hover,.t4:hover,.t5:hover,.t6:hover,.t7:hover,.t8:hover,.t9:hover,.t10:hover,.t1:hover{
+    background-color: rgb(108, 104, 104);
+}
+.x1:hover,.x2:hover,.x3:hover,.x4:hover,.e:hover,.x5:hover,.x6:hover,.r1:hover,.r2:hover,.r3:hover,.r4:hover,.log:hover{
+    background-color: rgb(108, 104, 104);
+}
