@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>calculator</title>
-	<link rel="stylesheet" type="text/css" href="style3.css">
+	<link rel="stylesheet" type="text/css" href="style3.css"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
@@ -25,7 +25,7 @@
         </div>
         <div>
             <button class="x1"><a href="index2.html" style="color: white; text-decoration: none;">2<sup>nd</sup> </a> </button>
-            <button class="x2">x<sup>2</sup> </button>
+            <button class="x2">x<sup>2</sup></button>
             <button class="x3">x<sup>3</sup> </button>
             <button class="x4">x<sup>y</sup> </button> 
             <button class="e">y<sup>x</sup> </button>
@@ -33,9 +33,9 @@
         </div>
         <div>
             <button class="x6">1/x</button>
-            <button class="r1">hk</button>
-            <button class="r2">hk</button>
-            <button class="r3">hk</button>
+            <button class="r1"><i>&#8730;</i></button>
+            <button class="r2"><i>&#8731;</i></button>
+            <button class="r3"><i>y<sup>√x</sup></i></button>
             <button class="r4">log<sub>y</sub> </button>
             <button class="log">log<sub>2</sub> </button>
         </div>
@@ -52,7 +52,7 @@
             <button class="t7" style="font-size: 12px;">sinh<sup>-1</sup></button>
             <button class="t8" style="font-size: 11px;">cosh<sup>-1</sup></button>
             <button class="t9" style="font-size: 11px;">tanh<sup>-1</sup></button>
-            <button class="t10">hk</button>
+            <button class="t10" ><i>&pi;</i></button>
             <button class="t11">Deg</button>
         </div>
 		<div>
@@ -90,5 +90,30 @@
 	</div>
 
 </center>
+<script language="javascript">
+    let string = "";
+    let buttons = document.querySelectorAll('.cal button'); // Corrected selector
+
+    Array.from(buttons).forEach((button) => {
+        button.addEventListener('click', (cal) => {
+            if (cal.target.innerHTML === "=") {
+                try {
+                    string = eval(string);
+                    document.querySelector('input').value = string;
+                } catch (error) {
+                    document.querySelector('input').value = "Error";
+                    string = "";
+                }
+            } else if (cal.target.innerHTML === "AC") {
+                string = "";
+                document.querySelector('input').value = string;
+            } else {
+                string += cal.target.innerHTML;
+                document.querySelector('input').value = string;
+            }
+        });
+    });
+    
+</script>
 </body>
 </html>
