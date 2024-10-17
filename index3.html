@@ -1,119 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>calculator</title>
+	<title>Calculator</title>
 	<link rel="stylesheet" type="text/css" href="style3.css"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-</head>
-    <head>
-       
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.0/math.js"></script>
 </head>
 <body>
 	<center>
-		<h1 class="">calculator</h1>
-	<div class="cal"><input type="text" name="" value="">
-        <div>
-            <button class="b1">(</button>
-            <button class="b2">)</button>
-            <button class="mc">mc</button>
-            <button class="m1">m+</button>
-            <button class="m2">m-</button>
-            <button class="mr">mr</button>
-        </div>
-        <div>
-            <button class="x1"><a href="index2.html" style="color: white; text-decoration: none;">2<sup>nd</sup> </a> </button>
-            <button class="x2">x<sup>2</sup></button>
-            <button class="x3">x<sup>3</sup> </button>
-            <button class="x4">x<sup>y</sup> </button> 
-            <button class="e">y<sup>x</sup> </button>
-            <button class="x5">2<sup>x</sup> </button>
-        </div>
-        <div>
-            <button class="x6">1/x</button>
-            <button class="r1"><i>&#8730;</i></button>
-            <button class="r2"><i>&#8731;</i></button>
-            <button class="r3"><i>y<sup>√x</sup></i></button>
-            <button class="r4">log<sub>y</sub> </button>
-            <button class="log">log<sub>2</sub> </button>
-        </div>
-        <div>
-            <button class="t0">x!</button>
-            <button class="t1">sin<sup>-1</sup></button>
-            <button class="t2" style="font-size: 12px;">cos <sup>-1</sup> </button>
-            <button class="t3" style="font-size: 13px;">tan<sup>-1</sup></button>
-            <button class="t4">e</button>
-            <button class="t5">EE</button>
-        </div>
-        <div>
-            <button class="t6">Rand</button>
-            <button class="t7" style="font-size: 12px;">sinh<sup>-1</sup></button>
-            <button class="t8" style="font-size: 11px;">cosh<sup>-1</sup></button>
-            <button class="t9" style="font-size: 11px;">tanh<sup>-1</sup></button>
-            <button class="t10" ><i>&pi;</i></button>
-            <button class="t11">Deg</button>
-        </div>
-		<div>
-			<button class="btn4">AC</button>
-			<button class="btn4">+/-</button>
-			<button class="btn4">%</button>
-			<button class="btn2">/</button>
+		<h1>Calculator</h1>
+		<div class="cal">
+			<input type="text" id="inputField" readonly>
+
+			<div>
+				<button class="b1" onclick="updateInput('(')"> ( </button>
+				<button class="b2" onclick="updateInput(')')"> ) </button>
+				<button class="mc" onclick="memoryClear()">mc</button>
+				<button class="m1" onclick="memoryAdd()">m+</button>
+				<button class="m2" onclick="memorySubtract()">m-</button>
+				<button class="mr" onclick="memoryRecall()">mr</button>
+			</div>
+			<div>
+				<button class="x1" onclick="updateInput('2^')"> <a href="index2.html" style="color: white; text-decoration: none;"> 2<sup>nd</sup> </a> </button>
+				<button class="x2" onclick="updateInput('^2')">x<sup>2</sup></button>
+				<button class="x3" onclick="updateInput('^3')">x<sup>3</sup></button>
+				<button class="x4" onclick="updateInput('^')">x<sup>y</sup></button> 
+				<button class="e" onclick="updateInput('y^')">y<sup>x</sup></button>
+				<button class="x5" onclick="updateInput('2^')">2<sup>x</sup></button>
+			</div>
+			<div>
+				<button class="x6" onclick="updateInput('1/x')">1/x</button>
+				<button class="r1" onclick="updateInput('sqrt(')">&#8730;</button>
+				<button class="r2" onclick="updateInput('cbrt(')">&#8731;</button>
+				<button class="r3" onclick="updateInput('yroot(')">y√x</button>
+				<button class="r4" onclick="updateInput('log(')">log</button>
+				<button class="log" onclick="updateInput('log2(')">log<sub>2</sub></button>
+			</div>
+			<div>
+				<button class="t0" onclick="updateInput('!')">x!</button>
+				<button class="t1" style="font-size: 14px;" onclick="updateInput('asin(')">sin⁻¹</button>
+				<button class="t2" style="font-size: 14px;" onclick="updateInput('acos(')">cos⁻¹</button>
+				<button class="t3" style="font-size: 14px;" onclick="updateInput('atan(')">tan⁻¹</button>
+				<button class="t4" onclick="updateInput('e')">e</button>
+				<button class="t5" onclick="updateInput('EE')">EE</button>
+			</div>
+			<div>
+				<button class="t6" onclick="updateInput('Rand')">Rand</button>
+				<button class="t7" style="font-size: 14px;" onclick="updateInput('asinh(')">sinh⁻¹</button>
+				<button class="t8" style="font-size: 14px;" onclick="updateInput('acosh(')">cosh⁻¹</button>
+				<button class="t9" style="font-size: 14px;" onclick="updateInput('atanh(')">tanh⁻¹</button>
+				<button class="t10" onclick="insertPi()">π</button>
+				<button class="t11" onclick="updateInput('Deg')">Deg</button>
+			</div>
+			<div>
+				<button class="btn4" onclick="clearInput()">AC</button>
+				<button class="btn4" onclick="toggleSign()">+/-</button>
+				<button class="btn4" onclick="updateInput('%')">%</button>
+				<button class="btn2" onclick="updateInput('/')">/</button>
+			</div>
+			<div>
+				<button class="btn3" onclick="updateInput('7')">7</button>
+				<button class="btn3" onclick="updateInput('8')">8</button>
+				<button class="btn3" onclick="updateInput('9')">9</button>
+				<button class="btn2" onclick="updateInput('*')">*</button>
+			</div>
+			<div>
+				<button class="btn3" onclick="updateInput('4')">4</button>
+				<button class="btn3" onclick="updateInput('5')">5</button>
+				<button class="btn3" onclick="updateInput('6')">6</button>
+				<button class="btn2" onclick="updateInput('-')">-</button>
+			</div>
+			<div>
+				<button class="btn3" onclick="updateInput('1')">1</button>
+				<button class="btn3" onclick="updateInput('2')">2</button>
+				<button class="btn3" onclick="updateInput('3')">3</button>
+				<button class="btn2" onclick="updateInput('+')">+</button>
+			</div>
+			<div>
+				<button class="btn5"><a href="index1.html" style="color: white; text-decoration: none;"><i class="fa fa-calculator" aria-hidden="true"></i></a></button>
+				<button class="btn3" onclick="updateInput('0')">0</button>
+				<button class="btn3" onclick="updateInput('.')">.</button>
+				<button class="btn2" onclick="evaluateExpression()">=</button>
+			</div>
 		</div>
-		<div>
-			<button class="btn3">7</button>
-			<button class="btn3">8</button>
-			<button class="btn3">9</button>
-			<button class="btn2">*</button>
-		</div>
-		<div>
-			<button class="btn3">4</button>
-			<button class="btn3">5</button>
-			<button class="btn3">6</button>
-			<button class="btn2">-</button>
-		</div>
-		<div>
-			<button class="btn3">1</button>
-			<button class="btn3">2</button>
-			<button class="btn3">3</button>
-			<button class="btn2">+</button>
-		</div>
-		<div>
-			<button class="btn5"><a href="index1.html" style="color: white; text-decoration: none;"><i class="fa fa-calculator" aria-hidden="true"></i></a></button>
-			<button class="btn3">0</button>
-			<button class="btn3">.</button>
-			<button class="btn2">=</button>
-		</div>
+	</center>
+
+	<script>
+
+		function updateInput(value) {
+			const input = document.getElementById('inputField');
+			input.value += value;
+		}
+
 		
+		function clearInput() {
+			const input = document.getElementById('inputField');
+			input.value = '';
+		}
 
-	</div>
+		
+		function toggleSign() {
+			const input = document.getElementById('inputField');
+			if (input.value) {
+				input.value = (parseFloat(input.value) * -1).toString();
+			}
+		}
 
-</center>
-<script language="javascript">
-    let string = "";
-    let buttons = document.querySelectorAll('.cal button'); // Corrected selector
+		
+		function insertPi() {
+    const input = document.querySelector('input');
+    input.value += '3.14159'; 
+}
 
-    Array.from(buttons).forEach((button) => {
-        button.addEventListener('click', (cal) => {
-            if (cal.target.innerHTML === "=") {
-                try {
-                    string = eval(string);
-                    document.querySelector('input').value = string;
-                } catch (error) {
-                    document.querySelector('input').value = "Error";
-                    string = "";
-                }
-            } else if (cal.target.innerHTML === "AC") {
-                string = "";
-                document.querySelector('input').value = string;
-            } else {
-                string += cal.target.innerHTML;
-                document.querySelector('input').value = string;
-            }
-        });
-    });
-    
-</script>
+		
+		function evaluateExpression() {
+			const input = document.getElementById('inputField');
+			try {
+				input.value = math.evaluate(input.value);  
+			} catch (error) {
+				input.value = 'Error';  
+			}
+		}
+
+
+		let memory = 0;
+
+		function memoryClear() {
+			memory = 0;
+		}
+
+		function memoryAdd() {
+			const input = document.getElementById('inputField');
+			memory += parseFloat(input.value) || 0;
+		}
+
+		function memorySubtract() {
+			const input = document.getElementById('inputField');
+			memory -= parseFloat(input.value) || 0;
+		}
+
+		function memoryRecall() {
+			const input = document.getElementById('inputField');
+			input.value = memory;
+		}
+	</script>
 </body>
 </html>
