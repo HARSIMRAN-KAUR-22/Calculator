@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -62,6 +62,15 @@
 			const memoryValue = parseFloat(localStorage.getItem('memory') || '0');
 			localStorage.setItem('memory', memoryValue - currentValue);
 		}
+			 function insertCubeRoot() {
+            const input = document.querySelector('input');
+            input.value += 'cbrt(';
+	}
+	function insertPi() {
+    const input = document.querySelector('input');
+    input.value += '3.14159'; // Directly insert Pi value
+}
+
 	</script>
 </head>
 <body>
@@ -88,8 +97,8 @@
 			<div>
 				<button class="x6" onclick="updateInput('1/x')">1/x</button>
 				<button class="r1" onclick="updateInput('sqrt(')">&#8730;</button>
-				<button class="r2" onclick="updateInput('cubert(')">&#8731;</button> 
-				<button class="r3"  class="r2" onclick="updateInput('yroot(')">y√x</button>
+				<button class="r2" onclick="insertCubeRoot()">&#8731;</button> 
+				<button class="r3" class="r2" onclick="updateInput('yroot(')">y√x</button>
 				<button class="r4" onclick="updateInput('log(')">ln</button>
 				<button class="log" onclick="updateInput('log10(')">log<sub>10</sub></button>
 			</div>
@@ -106,7 +115,7 @@
 				<button class="t7" onclick="updateInput('sinh(')">sinh</button>
 				<button class="t8" onclick="updateInput('cosh(')">cosh</button>
 				<button class="t9" onclick="updateInput('tanh(')">tanh</button>
-				<button class="t10" onclick="updateInput('π')"><i class="fa-solid fa-square-root"  style="height: 2px; width: 2px;">&Pi;</i></button>
+				<button class="t10" onclick="insertPi()">π</button>
 				<button class="t11" onclick="updateInput('Deg')">Deg</button>
 			</div>
 			<div>
@@ -142,4 +151,4 @@
 		</div>
 	</center>
 </body>
-</html>
+</html> 
