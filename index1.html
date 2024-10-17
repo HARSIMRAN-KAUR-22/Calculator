@@ -1,71 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>calculator</title>
-	<link rel="stylesheet" type="text/css" href="style1.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+
+        function appendToResult(value) {
+            document.querySelector('input[name="result"]').value += value;
+        }
+
+        function clearResult() {
+            document.querySelector('input[name="result"]').value = '';
+        }
+
+
+        function toggleSign() {
+            let result = document.querySelector('input[name="result"]').value;
+            if (result) {
+                if (result.charAt(0) === '-') {
+                    document.querySelector('input[name="result"]').value = result.substring(1);
+                } else {
+                    document.querySelector('input[name="result"]').value = '-' + result;
+                }
+            }
+        }
+
+        
+        function calculatePercentage() {
+            let result = document.querySelector('input[name="result"]').value;
+            if (result) {
+                document.querySelector('input[name="result"]').value = (parseFloat(result) / 100).toString();
+            }
+        }
+
+        
+        function calculateResult() {
+            let result = document.querySelector('input[name="result"]').value;
+            try {
+                document.querySelector('input[name="result"]').value = eval(result);
+            } catch (error) {
+                document.querySelector('input[name="result"]').value = 'Error';
+            }
+        }
+    </script>
 </head>
 <body>
-	
-	<center>
-		<h1 class="">calculator</h1>
-	<div class="cal"><input type="text" name="" value="">
-		<div>
-			
-			<button class="btn4">AC</button>
-			<button class="btn4">+/-</button>
-			<button class="btn4">%</button>
-			<button class="btn2">/</button>
-		</div>
-		<div>
-			<button class="btn3">7</button>
-			<button class="btn3">8</button>
-			<button class="btn3">9</button>
-			<button class="btn2">*</button>
-		</div>
-		<div>
-			<button class="btn3">4</button>
-			<button class="btn3">5</button>
-			<button class="btn3">6</button>
-			<button class="btn2">-</button>
-		</div>
-		<div>
-			<button class="btn3">1</button>
-			<button class="btn3">2</button>
-			<button class="btn3">3</button>
-			<button class="btn2">+</button>
-		</div>
-		<div>
-			<button class="btn5"> <a href="index2.html" style="color: white; text-decoration: none;"><i class="fa fa-calculator" aria-hidden="true"></i></a></button>
-			<button class="btn3">0</button>
-			<button class="btn3">.</button>
-			<button class="btn2">=</button>
-		</div>
-		
-
-	</div>
-</center>
-<script language="javascript">
-	let string="";
-	let buttons = document.querySelectorAll();
-	Array.from(buttons).forEach((button)=>{
-		button.addEventListener('click',(cal)=>{
-			if(cal.target.innerHTML== "="){
-				string = eval(string);
-				document.querySelector('input').value = string;
-			}
-			else if(cal.target.innerHTML== "AC"){
-				string =""
-				document.querySelector('input').value = string;
-			}
-			else(console.log(cal.target))
-			string = string + cal.target.innerHTML;
-			document.querySelector('input').value = string;
-		})
-	})
-	
-</script>
+    <center>
+        <h1>Calculator</h1>
+        <div class="cal">
+            <input type="text" name="result" value="" readonly>
+            <div>
+                <button class="btn4" onclick="clearResult()">AC</button>
+                <button class="btn4" onclick="toggleSign()">+/-</button>
+                <button class="btn4" onclick="calculatePercentage()">%</button>
+                <button class="btn2" onclick="appendToResult('/')">/</button>
+            </div>
+            <div>
+                <button class="btn3" onclick="appendToResult('7')">7</button>
+                <button class="btn3" onclick="appendToResult('8')">8</button>
+                <button class="btn3" onclick="appendToResult('9')">9</button>
+                <button class="btn2" onclick="appendToResult('*')">*</button>
+            </div>
+            <div>
+                <button class="btn3" onclick="appendToResult('4')">4</button>
+                <button class="btn3" onclick="appendToResult('5')">5</button>
+                <button class="btn3" onclick="appendToResult('6')">6</button>
+                <button class="btn2" onclick="appendToResult('-')">-</button>
+            </div>
+            <div>
+                <button class="btn3" onclick="appendToResult('1')">1</button>
+                <button class="btn3" onclick="appendToResult('2')">2</button>
+                <button class="btn3" onclick="appendToResult('3')">3</button>
+                <button class="btn2" onclick="appendToResult('+')">+</button>
+            </div>
+            <div>
+                <button class="btn5"><a href="index2.html" style="color: white; text-decoration: none;"><i class="fa fa-calculator" aria-hidden="true"></i></a></button>
+                <button class="btn3" onclick="appendToResult('0')">0</button>
+                <button class="btn3" onclick="appendToResult('.')">.</button>
+                <button class="btn2" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </center>
 </body>
 </html>
